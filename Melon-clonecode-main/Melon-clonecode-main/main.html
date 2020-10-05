@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멜론>스타포스트</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="look.css" type='text/css'>
+    <script>
+
+        
+
+        function RollingText(){
+            this._$texts = null;
+            this._currentIndex = 0;
+            this._timerID = -1;
+            this._init();
+            this._initTextPos();
+
+            this.startAutoPlay();
+        }
+
+        RollingText.prototype._init = function(){
+            this._$texts = $(".list li");
+        }
+
+        RollingText.prototype._initTextPos = function(){
+            this._$texts.css("top", 20);
+            this._$texts.eq(this._currentIndex).css("top", 0);
+        }
+
+        RollingText.prototype.startAutoPlay = function(){
+            var obj = this;
+            if(this._timerID == -1){
+                this._timerID = setInterval(function(){
+                    obj.nextText();
+                }, 1500);
+            }
+        }
+
+        RollingText.prototype.nextText = function(){
+            var outIndex = this._currentIndex;
+            this._currentIndex++;
+            if(this._currentIndex >= this._$texts.length){
+                this._currentIndex = 0;
+            }
+
+            var $outText = this._$texts.eq(outIndex);
+            var $inText = this._$texts.eq(this._currentIndex);
+
+            $outText.css("top", -20);
+            $inText.css("top", 0);
+        }
+        $(document).ready(function(){
+
+            var roll = new RollingText();
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="greenline"></div>
+
+    <header>
+        <div class='uplogo'>
+            <div class="util_menu">
+                <ul>
+                    <div class="top_left">
+                        <li><a href="https://ticket.melon.com/main/index.htm" class="ticket">멜론 티켓</a></li>
+                    </div>
+                    <div class="top_right">
+                        <li class='membership'><a href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm" title='이용권구매'>이용권구매</a></li>
+                        <li class='VIP'><a href="https://www.melon.com/event/vip/index.htm" title='VIP'>VIP혜택관</a></li>
+                        <li class='event'><a href="https://www.melon.com/event/index.htm" title='이벤트'>이벤트</a></li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="header">
+            <div class="main">
+                <a href="https://www.melon.com/index.htm" title='Main'>
+                    <img src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png" alt="MelOn" class="main">
+                </a>
+            </div>
+
+            <div class='search'>
+                <fieldset id='search_top'>
+                    <legend>통합검색영역</legend>
+                    <input type="text" title='검색' placeholder='주간인기상에서 이번주 인기곡을 확인하세요!' id='top_search' style="width: 249px; display: inline-block;" />
+                    <button type="button" class='go_search' title='검색'></button>
+                </fieldset>
+            </div>
+            
+            <div class="realtime_word">
+                <div class='realtime'>
+                    <a href="//www.melon.com/search/trend/index.htm" class="title" style="display: inline-block;">
+                        <img src="//cdnimg.melon.co.kr/resource/image/web/main/bg_loce_151207.png" alt="실시간"></a>
+                </div>
+                
+                <div class="lists">
+                    <ol class='list'>
+                        <li id='l0'>1. 임영웅</li>
+                        <li id='l1'>2. 샵</li>
+                        <li id='l2'>3. 보아</li>
+                        <li id='l3'>4. 태연</li>
+                        <li id='l4'>5. 쩔어</li>
+                        <li id='l5'>6. 허각</li>
+                        <li id='l6'>7. 다비치</li>
+                        <li id='l7'>8. 위너</li>
+                        <li id='l8'>9. 강변안삼</li>
+                        <li id='l9'>10. 오반<!--스크립트로 동작--></li>
+                    </ol>
+                </div>
+                    
+            </div>
+
+            <div class="id_box">
+                <a href="https://accounts.kakao.com/weblogin/create_account?token=&continue=https%3A%2F%2Fmember.melon.com%2FkakaoItg_complete.htm%3Fpoc%3DWP10%26location%3DJOIN%26melonParam%3D&access_token=&token_type=&context=melon&prevent_loop=for_new_session" class="signup">회원가입</a>
+                <button type="button" class='login'><span>로그인</span></button>
+            </div>
+        </div>
+
+        <div class="menus">
+            <ul>
+                <li id='menu1'>
+                    <a href="https://www.melon.com/chart/index.htm">맬론차트</a></li>
+                <li id='menu2'>
+                    <a href="https://www.melon.com/new/index.htm">최신</a></li>
+                <li id='menu3'>
+                    <a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100">장르</a></li>
+                <li id='menu4'>
+                    <a href="https://www.melon.com/dj/today/djtoday_list.htm">멜론DJ</a></li>
+                <li id='menu5'>
+                    <a href="https://www.melon.com/tv/index.htm">멜론TV</a></li>
+                <li id='menu6'>
+                    <a href="https://www.melon.com/artistplus/todayupdate/index.htm">스타포스트</a>
+                    
+                </li>
+                <li id='menu7'>
+                    <a href="https://www.melon.com/musicstory/today/index.htm">매거진</a></li>
+                <li id='menu8'>
+                    <a href="https://www.melon.com/mma/index.htm">뮤직어워드</a></li>
+                <li id='menu9'>
+                    <a href="https://www.melon.com/flac/index.htm">멜론Hi-Fi</a></li>
+                <li id='menu10'>더보기</li>
+            </ul>
+            <ul class="menu_more">
+                <li><a href="javascript:MELON.WEBSVC.POC.menu.goMyMusicMain();">마이뮤직</a></li>
+                <li><a href="javascript:MELON.WEBSVC.POC.menu.goFeed();">피드</a></li>
+            </ul>
+            
+            
+        </div>
+        <div class="bottom_menu">
+            <ul>
+                <li><a href="https://www.melon.com/artistplus/todayupdate/index.htm">NOW</a></li>
+                <li><a href="https://www.melon.com/artistplus/artistchart/index.htm">아티스트랭킹</a></li>
+                <li><a href="https://www.melon.com/artistplus/myranking/index.htm">마이 랭킹</a></li>
+            </ul>
+            <div class='bottom_menu2'>
+                <button onclick="location.href='MELON.WEBSVC.POC.menu.goMyMusicFanSignArtist();'"><span>팬맺은 아티스트</span></button>
+                <button onclick="location.href='/www.melon.com/artistplus/finder/index.htm'"><span>아티스트 파인더</span></button>
+            </div>
+        </div>
+            
+    </header>
+
+    <div class="contents">
+        <div class="title">
+            <p><span style="font-size: large; font-weight: bold;">NOW</span> 아티스트가 직접 쓴 스토리와 추천음악까지! 아티스트들의 최신 소식을 실시간으로 확인하세요.</p>
+        </div>
+        <h2>오늘의 인기</h2>
+        <div class='popular_vid'>
+            <div class="vid_1"><a href="https://www.youtube.com/watch?v=ZEtxV_Cicv4">
+                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/25/090/50225090_20200825110157_640.jpg/melon/resize/319/quality/80/optimize" alt="방탄소년단 - Dynamite">
+                </a>
+                <div class="vid_info">
+                    <p style="text-align: center;"><span style="font-weight: bold;">Dynamite B-side</span> - 방탄소년단</p>
+                </div>
+            </div>
+            <div class="vid_1"><a href="https://www.youtube.com/watch?v=ZEtxV_Cicv4">
+                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/25/090/50225090_20200825110157_640.jpg/melon/resize/319/quality/80/optimize" alt="방탄소년단 - Dynamite">
+                </a>
+                <div class="vid_info">
+                    <p style="text-align: center;"><span style="font-weight: bold;">Dynamite B-side</span> - 방탄소년단</p>
+                </div>
+            </div>
+            <div class="vid_1"><a href="https://www.youtube.com/watch?v=ZEtxV_Cicv4">
+                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/25/090/50225090_20200825110157_640.jpg/melon/resize/319/quality/80/optimize" alt="방탄소년단 - Dynamite">
+                </a>
+                <div class="vid_info">
+                    <p style="text-align: center;"><span style="font-weight: bold;">Dynamite B-side</span> - 방탄소년단</p>
+                </div>
+            </div>  
+        </div>
+        <div class="updates">
+            <h3 style="display: block;">오늘의 업데이트</h3>
+            <div class="tabmenu">
+                <ul>
+                    <li class='all'><a href="/artistplus/todayupdate/index.htm?contsTypeCode=ALL&orderBy=VIEW_CNT">전체</a></li>
+                    <li class='video'><a href="/artistplus/todayupdate/index.htm?contsTypeCode=N10003&orderBy=VIEW_CNT">비디오</a></li>
+                    <li class='photo'><a href="/artistplus/todayupdate/index.htm?contsTypeCode=N10004&orderBy=VIEW_CNT">포토</a></li>
+                </ul>
+                <div class='tabmenu_more'>
+                    <li><a href="">인기순</a></li>
+                    <li><a href="">최신순</a></li>
+                </div>
+            </div>
+            <div class="updates_wrap">
+                <div class="updates_feed">
+                    <div class="updates_info">
+                        <div class="info_bgimg">
+
+                        </div>
+                    </div>
+                    <div class="updates_cnt" style="left: 267px;">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                    <div class="updates_cnt" style="left: 267px;">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                    <div class="updates_cnt" style="left: 519px;">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                    <div class="updates_cnt" style="left: 771px;">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>

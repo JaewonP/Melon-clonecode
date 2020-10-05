@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: relative;
+            top: 100px;
+            left: 100px;
+            padding: 0;
+            border: coral 1px solid;
+            overflow: hidden;
+            height: 20px;
+        }
+        ol{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            height: 20px;
+        }
+        li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* width: 80px;
+            height: 20px; */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        function RollingText(){
+            this._$texts = null;
+            this._currentIndex = 0;
+            this._timerID = -1;
+            this._init();
+            this._initTextPos();
+
+            this.startAutoPlay();
+        }
+
+        RollingText.prototype._init = function(){
+            this._$texts = $(".list li");
+        }
+
+        RollingText.prototype._initTextPos = function(){
+            this._$texts.css("top", 20);
+            this._$texts.eq(this._currentIndex).css("top", 0);
+        }
+
+        RollingText.prototype.startAutoPlay = function(){
+            var obj = this;
+            if(this._timerID == -1){
+                this._timerID = setInterval(function(){
+                    obj.nextText();
+                }, 1500);
+            }
+        }
+
+        RollingText.prototype.nextText = function(){
+            var outIndex = this._currentIndex;
+            this._currentIndex++;
+            if(this._currentIndex >= this._$texts.length){
+                this._currentIndex = 0;
+            }
+
+            var $outText = this._$texts.eq(outIndex);
+            var $inText = this._$texts.eq(this._currentIndex);
+
+            $outText.css({top : -20});
+            $inText.css({top : 0});
+        }
+
+        $(document).ready(function(){
+
+            var roll = new RollingText();
+
+        })
+    </script>
+</head>
+<body>
+    <div class="lists">
+        <ol class="list">
+            <li>장난감</li>
+            <li>기프티콘</li>
+            <li>옥수수</li>
+            <li>바람개비</li>
+            <li>자동차</li>
+            <li>공책</li>
+            <li>샤프</li>
+            <li>거울</li>
+            <li>립밤</li>
+            <li>장마철</li>
+        </ol>
+    </div>
+</body>
+</html>
