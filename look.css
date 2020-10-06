@@ -72,7 +72,7 @@ div.util_menu{
     float: right;
 }
 
-.top_right li {
+li.membership, .VIP, .event {
     display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
@@ -80,7 +80,7 @@ div.util_menu{
 
 
 
-.main    {
+.main{
     display: inline-block;
     padding: 20px;
     border: 0;
@@ -149,8 +149,8 @@ div.realtime{
     width: 45px;
 }
 .realtime a{
-    vertical-align: middle;
-    margin-top: -35px;
+    vertical-align: bottom;
+    /* margin-top: -35px; */
 }
 .realtime img{
     appearance: no-repeat;
@@ -158,18 +158,23 @@ div.realtime{
     margin: 0 0 0 3px;
 }
 div.lists{
-    display: inline-block;
-    width: 162px;
-}
-.lists ol{
-    display: inline-block;
+    position: relative;
     overflow: hidden;
-    height: 20px;
     width: 162px;
 }
 
-.lists li {
+ol.list{
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.list li {
+    padding: 0;
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 1;
     height: 20px;
 }
@@ -349,6 +354,7 @@ div.tabmenu_more{
 
 .updates_wrap{
     background-color: rgb(226, 223, 223);
+    position: relative;
     margin: 10px;
     margin: 15px;
     padding: 2px;

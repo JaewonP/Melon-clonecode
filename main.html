@@ -25,8 +25,8 @@
         }
 
         RollingText.prototype._initTextPos = function(){
-            this._$texts.css("top", 120);
-            this._$texts.eq(this._currentIndex).css("top", 100);
+            this._$texts.css("top", 20);
+            this._$texts.eq(this._currentIndex).css("top", 0);
         }
 
         RollingText.prototype.startAutoPlay = function(){
@@ -48,14 +48,68 @@
             var $outText = this._$texts.eq(outIndex);
             var $inText = this._$texts.eq(this._currentIndex);
 
-            $outText.css("top", 80);
-            $inText.css("top", 100);
+            $outText.css("top", -20);
+            $inText.css("top", 0);
         }
         $(document).ready(function(){
 
             var roll = new RollingText();
 
         })
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("button.video").click(function(){
+
+                show.
+                //for $images.legnth
+                fot(var a of $images){
+                    if(a.getclass() != 'cnt_video'){
+                        a.css("display", hidden);
+                    }
+                }
+
+
+                
+                //비디오카테고리 div들을 골라 클래스 추가..?
+                //순서대로 1~@ .one~@
+                //반복문으로 클래스 설정? -> 비디오카테고리의 갯수와 클래스 미리 만들어둔 배열의 길이가 다른경우 어떻게?
+                //클래스 설정한 다음 클래스에 따라 css설정
+                //나머지 카테고리는 클래스 삭제 및 display:hidden설정
+                //if문으로 비디오인지 나머지인지 구분해서 아닌것들에 적용
+                //
+
+
+
+            })
+            var gridvideo = {
+			align : function($images){
+				var length = $images.length;
+				var count =3;
+				for (var i = 0; i < length; i++) {
+					var x = (i%count) * 200;
+					var y = parseInt(i/count) *200;
+					$images.eq(i).css({
+						left : x,
+						top:y
+					});
+				}
+			}
+		}
+
+
+        })
+
+
+        //.one: left 267px
+        //.two: left 519px
+        //.three left 771px
+        //.four top 230px
+        //.five {top, .one.position-top + .one.height}, {left, 267px}
+        //.six {top, .two.position-top + .one.height}, {left, 519px}
+        //.seven {top, .three.position-top + .one.height}, {left, 711px}
+        //.eight {top, .four.position-top + .one.height}, {left, 0px}
+
 
     </script>
 </head>
@@ -71,8 +125,8 @@
                     </div>
                     <div class="top_right">
                         <li class='membership'><a href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm" title='이용권구매'>이용권구매</a></li>
-                        <li class=VIP><a href="https://www.melon.com/event/vip/index.htm" title='VIP'>VIP혜택관</a></li>
-                        <li class=event><a href="https://www.melon.com/event/index.htm" title='이벤트'>이벤트</a></li>
+                        <li class='VIP'><a href="https://www.melon.com/event/vip/index.htm" title='VIP'>VIP혜택관</a></li>
+                        <li class='event'><a href="https://www.melon.com/event/index.htm" title='이벤트'>이벤트</a></li>
                     </div>
                 </ul>
             </div>
@@ -229,20 +283,6 @@
                             <a href=""><img src="" alt=""></a>
                         </li>
                     </div>
-                    <div class="updates_cnt" style="left: 267px;">
-                        <li class="cnt_thumb">
-                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
-                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
-                            </a>
-                        </li>
-                        <li class="cnt_info">
-                            <li id="video"></li><br>
-                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
-                        </li>
-                        <li class="cnt_artist">
-                            <a href=""><img src="" alt=""></a>
-                        </li>
-                    </div>
                     <div class="updates_cnt" style="left: 519px;">
                         <li class="cnt_thumb">
                             <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
@@ -261,6 +301,34 @@
                         <li class="cnt_thumb">
                             <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
                                 <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                    <div class="updates_cnt" style="top: 230px">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
+                            </a>
+                        </li>
+                        <li class="cnt_info">
+                            <li id="video"></li><br>
+                            <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
+                        </li>
+                        <li class="cnt_artist">
+                            <a href=""><img src="" alt=""></a>
+                        </li>
+                    </div>
+                    <div class="updates_cnt" style="top: 340px; left: 267px;">
+                        <li class="cnt_thumb">
+                            <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
+                                <img src="https://cdnimg.melon.co.kr/cm2/photo/images/000/801/13/108/80113108_20201006013921_500.jpg/melon/resize/219/quality/80/optimize" alt="TombyTgth">
                             </a>
                         </li>
                         <li class="cnt_info">
