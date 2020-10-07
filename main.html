@@ -63,7 +63,7 @@
 
                 show.
                 //for $images.legnth
-                fot(var a of $images){
+                fot(const $a of $images){
                     if(a.getclass() != 'cnt_video'){
                         a.css("display", hidden);
                     }
@@ -112,10 +112,18 @@
 
 
     </script>
+    <!-- <script>
+        
+        $(document).ready(function(){
+            $(".menus li").mouseover(function{
+                this.css("border-bottom", "3px green solid")
+            })
+        })
+    </script> -->
 </head>
 <body>
     <div class="greenline"></div>
-
+<div class="world">
     <header>
         <div class='uplogo'>
             <div class="util_menu">
@@ -131,7 +139,7 @@
                 </ul>
             </div>
         </div>
-        <hr>
+        <hr style="width: 100%;">
         <div class="header">
             <div class="main">
                 <a href="https://www.melon.com/index.htm" title='Main'>
@@ -177,7 +185,7 @@
         </div>
 
         <div class="menus">
-            <ul>
+            <ul style="padding: 0; margin: 0;">
                 <li id='menu1'>
                     <a href="https://www.melon.com/chart/index.htm">맬론차트</a></li>
                 <li id='menu2'>
@@ -276,7 +284,7 @@
                             </a>
                         </li>
                         <li class="cnt_info">
-                            <li id="video"></li><br>
+                            <li id="video"></li>
                             <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
                         </li>
                         <li class="cnt_artist">
@@ -290,7 +298,7 @@
                             </a>
                         </li>
                         <li class="cnt_info">
-                            <li id="video"></li><br>
+                            <li id="video"></li>
                             <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
                         </li>
                         <li class="cnt_artist">
@@ -304,35 +312,35 @@
                             </a>
                         </li>
                         <li class="cnt_info">
-                            <li id="video"></li><br>
+                            <li id="video"></li>
                             <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
                         </li>
                         <li class="cnt_artist">
                             <a href=""><img src="" alt=""></a>
                         </li>
                     </div>
-                    <div class="updates_cnt" style="top: 230px">
+                    <div class="updates_cnt" style="top: 245px">
                         <li class="cnt_thumb">
                             <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
                                 <img src="https://cdnimg.melon.co.kr/cm2/mv/images/wide/502/26/631/50226631_1_20200929210459_640.jpg/melon/resize/219/quality/80/optimize" alt="BlackPink">
                             </a>
                         </li>
                         <li class="cnt_info">
-                            <li id="video"></li><br>
+                            <li id="video"></li>
                             <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
                         </li>
                         <li class="cnt_artist">
                             <a href=""><img src="" alt=""></a>
                         </li>
                     </div>
-                    <div class="updates_cnt" style="top: 340px; left: 267px;">
+                    <div class="updates_cnt" style="top: 305px; left: 267px;">
                         <li class="cnt_thumb">
                             <a href="https://www.youtube.com/watch?v=MZ4JGye4dQU">
                                 <img src="https://cdnimg.melon.co.kr/cm2/photo/images/000/801/13/108/80113108_20201006013921_500.jpg/melon/resize/219/quality/80/optimize" alt="TombyTgth">
                             </a>
                         </li>
                         <li class="cnt_info">
-                            <li id="video"></li><br>
+                            <li id="video"></li>
                             <p id='video_info'>BLACKPINK 'Lovesick Girls' 포인트 안무</p>
                         </li>
                         <li class="cnt_artist">
@@ -361,6 +369,8 @@
     <footer>
 
     </footer>
-    
+
+</div>
+        
 </body>
 </html>

@@ -3,11 +3,9 @@ html{
     margin: 0;
     padding: 0;
     border: 0;
-    width: max-content
 }
 
 body{
-    width: max-content;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -21,6 +19,14 @@ body{
     -webkit-text-size-adjust: none;
 }
 
+div.world{
+    min-width: 1099px;
+    max-width: 1100px;
+
+    margin: auto;
+
+}
+
 header{
     display: block;
 }
@@ -29,7 +35,7 @@ header{
 .greenline {
     background: rgb(3, 196, 3);
     display: block;
-    width: 100%;
+    min-width: 100%;
     height: 10px;
     margin-top:0%;
     position: absolute;
@@ -80,14 +86,15 @@ li.membership, .VIP, .event {
 
 
 
-.main{
+div.main{
     display: inline-block;
-    padding: 20px;
+    vertical-align: middle;
     border: 0;
+    height: 100px;
+    margin-right: 20px;
 }
 
 img.main{
-    vertical-align: middle;
     width: 142;
     height: 99;
     left: 10;
@@ -200,10 +207,13 @@ button.login{
     height: 55px;
     margin: 0;
 }
-.menus ul, li{
+.menus ul, .menus li{
     display: inline-block;
     height: 55px;
     padding: 10px;
+}
+.menus a:hover{
+    color:  rgb(3, 196, 3);
 }
 
 #menu1{
@@ -262,17 +272,21 @@ ul.menu_more{
 .bottom_menu ul{
     margin: 0;
     border: 0;
-    padding: 0;
+    padding: 18px;
     display: inline-block;
 }
-.bottom_menu ul li{
+.bottom_menu ul, .bottom_menu li{
     vertical-align: middle;
+    display: inline-block;
+    height: 55px;
+    margin-right: 25px;
+    margin-left: 10px;
 }
 .bottom_menu2{
     float: right;
     height: 55px;
     padding: 0;
-    margin: 0;
+    margin: 15px;
     display: inline-block;
     vertical-align: middle;
 }
@@ -346,10 +360,18 @@ div.tabmenu{
 }
 .tabmenu ul{
     display: inline-block;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+.tabmenu li{
+    height: 40px;
+    display: inline-block;
+    margin-right: 20px;
 }
 div.tabmenu_more{
     float: right;
     display: inline-block;
+    margin: 15px;
 }
 
 .updates_wrap{
@@ -357,7 +379,7 @@ div.tabmenu_more{
     position: relative;
     margin: 10px;
     margin: 15px;
-    padding: 2px;
+    padding: 14px;
     border: none;
     height: 800px;
 }
@@ -380,6 +402,11 @@ div.info_bgimg{
     background: url(https://cdnimg.melon.co.kr/resource/image/web/artistplus/bg_artist_content.png) no-repeat center;
 }
 
+.cnt_thumb img{
+    margin: 9px;
+}
+
+
 li.cnt_info{
     height: 30px;
     padding: 0;
@@ -389,7 +416,7 @@ li.cnt_info{
 
 li#video{
     padding: 0;
-    margin: 0;
+    margin-left: 10px;
     width: 42px;
     height: 16px;
     background-image: url(https://cdnimg.melon.co.kr/resource/image/web/artistplus/icon_today_170213.png);
