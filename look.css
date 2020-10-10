@@ -383,23 +383,35 @@ div.tabmenu_more{
     border: none;
     height: 800px;
 }
-.updates_feed div{
+
+.updates_feed{
+    position: relative;
+    height: fit-content;
+}
+
+div.updates_info{
+    height: 200px;
+    padding-top: 10px;
+    display: block;
+    width: 237px;
+    border: 1px solid grey;
+    background-color: #fff;
+    position: absolute;
+    }
+li.info_bgimg{
+    height: 181px;
+    border: 0;
+    background: url(https://cdnimg.melon.co.kr/resource/image/web/artistplus/bg_artist_content.png) no-repeat center;
+}
+
+.updates_cnt_video, .updates_cnt_photo{
     background-color: #fff;
     position: absolute;
     display: block;
     width: 237px;
     padding: 0;
     border: 1px solid grey;
-}
-div.updates_info{
-    height: 200px;
-    padding-top: 10px;
-    /* background-color: #fff; */
-    }
-div.info_bgimg{
-    height: 181px;
-    border: 0;
-    background: url(https://cdnimg.melon.co.kr/resource/image/web/artistplus/bg_artist_content.png) no-repeat center;
+
 }
 
 .cnt_thumb img{
@@ -428,6 +440,22 @@ p#video_info{
     margin-left: 15px;
     margin-right: 15px;
 }
+
+li#photo{
+    padding: 0;
+    margin-left: 10px;
+    width: 42px;
+    height: 16px;
+    background-image: url(https://cdnimg.melon.co.kr/resource/image/web/artistplus/icon_today_170213.png);
+    background-position-x: -738px;
+}
+
+p#photo_info{
+    width: 200px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
 
 
 
